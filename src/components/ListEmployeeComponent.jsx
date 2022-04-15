@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import EmployeeService from '../services/EmployeeService';
 
 class ListEmployeeComponent extends Component {
+
     //constructor with variable initialize
     constructor(props) {
         super(props);
@@ -10,10 +11,36 @@ class ListEmployeeComponent extends Component {
         this.state = {
             employees: []
         }
-
+        //bind methods to componets
         this.addEmployee = this.addEmployee.bind(this);
+        this.editEmployee = this.editEmployee.bind(this);
+        this.deleteEmployee = this.deleteEmployee.bind(this);
 
     }
+
+    //edit employee
+    editEmployee(id) {
+        //pass parameter with $ mark
+        this.props.history.push('/update-employee/' + id);
+        // reuse
+        // this.props.history.push('/add-employee/' + id);
+
+    }
+
+    //delete employee
+    deleteEmployee(id){
+        EmployeeService.deleteEmployee(id).then((res) => {
+            // delete from variable list
+            this.setState({ employees: this.state.employees.filter(employee => employee.id !== id) });
+        });
+    }
+
+    //view particular employee
+    viewEmployee(id){
+        // this.props.history.push('/view-employee/' + id);
+        this.props.history.push(`/view-employee/${id}`);
+    }
+
     //get from EmployeeService by link
     componentDidMount() {
         EmployeeService.getEmployees().then((res) => {
@@ -25,6 +52,8 @@ class ListEmployeeComponent extends Component {
 
     //for add
     addEmployee() {
+        // reuse
+        // this.props.history.push('/add-employee/-1');
         this.props.history.push('/add-employee');
     }
 
@@ -53,6 +82,11 @@ class ListEmployeeComponent extends Component {
                                         <tr key={employee.id}>
                                             <td>{employee.username}</td>
                                             <td>{employee.email}</td>
+                                            <td>
+                                                <button className='btn btn-info' onClick={() => this.editEmployee(employee.id)}>Update</button>
+                                                <button style={{marginLeft:"5px"}} className='btn btn-danger' onClick={() => this.deleteEmployee(employee.id)}>Delete</button>
+                                                <button style={{marginLeft:"5px"}} className='btn btn-success' onClick={() => this.viewEmployee(employee.id)}>View</button>
+                                            </td>
 
                                         </tr>
                                 )
