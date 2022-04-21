@@ -1,7 +1,7 @@
 //connect with springboot
 import axios from 'axios';
 
-const EMP_URL = "http://localhost:8880/api/v1/employees";
+const EMP_URL = "http://localhost:8080/api/v1/employees";
 
 class EmployeeService {
 
