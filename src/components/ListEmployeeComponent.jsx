@@ -9,7 +9,7 @@ class ListEmployeeComponent extends Component {
         super(props);
 
         this.state = {
-            employees: []
+            employees: [],
         }
         //bind methods to componets
         this.addEmployee = this.addEmployee.bind(this);
