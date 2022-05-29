@@ -18,6 +18,11 @@ const SidebarDataAdmin = [
       heading: "Position",
       linkto:"/",
     },
+    {
+        //   icon: MenuBook,
+          heading: "Other",
+          linkto:"/",
+    },
     
   ];
 
@@ -46,11 +51,13 @@ const Sidebar = () => {
             {/* <item.icon className="sidebarIcon" /> */}
             {item.heading}
           </li>
+         
           </Link>
           
           </div>
             );
-         })}
+         })} 
+
         </ul>
    
       </div>
