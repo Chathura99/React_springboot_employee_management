@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
 import EmployeeService from '../services/EmployeeService';
+import "../App.css";
 
 class ListEmployeeComponent extends Component {
 
@@ -61,10 +62,11 @@ class ListEmployeeComponent extends Component {
     render() {
         return (
             <div>
+        
                 <h2 className='text-center'>Employee List </h2> <br></br>
-                <div className='row'>
+                {/* <div className='row'>
                     <button className='btn btn-primary' onClick={this.addEmployee}>Add Employee</button>
-                </div>
+                </div> */}
 
                 <div className='row'>
                     <table className='table table-striped table-bordered'>

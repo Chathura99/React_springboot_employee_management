@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 //routing 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -8,14 +7,20 @@ import FooterComponent from './components/FooterComponent';
 import CreateEmployeeComponent from './components/CreateEmployeeComponent';
 import UpdateEmployeeComponent from './components/UpdateEmployeeComponent';
 import ViewEmployeeComponent from './components/ViewEmployeeComponent';
+import Sidebar from './components/Sidebar';
 
 function App() {
   return (
-    <div>
+    <div className='all'>
       <Router>
-
-          <HeaderComponent />
-
+<div className='head'>
+  <HeaderComponent />
+</div>
+          
+          <div className='left'>
+            <Sidebar/>
+          </div>
+          
           <div className="container">
             {/* switch between */}
             <Switch>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import "../App.css";
 class HeaderComponent extends Component {
 
     constructor(props){
@@ -14,7 +14,7 @@ class HeaderComponent extends Component {
         return (
             <div>
                 <header>
-                    <nav className='navbar navbar-expand-md navbar-dark bg-dark'>
+                    <nav className='navbar navbar-expand-md navbar-dark bg-dark' >
                         <div><a href='#' className='navbar-brand'>Employee Management System</a></div>
                     </nav>
                 </header>
